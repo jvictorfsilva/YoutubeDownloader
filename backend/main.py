@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pytubefix import YouTube  # certifique-se de instalar e usar a versão corrigida do pytube
 from moviepy import VideoFileClip, AudioFileClip
-from tempfile import NamedTemporaryFile
+# from tempfile import NamedTemporaryFile
 
 app = FastAPI()
 
