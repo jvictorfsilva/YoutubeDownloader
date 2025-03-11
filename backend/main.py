@@ -8,9 +8,9 @@ from moviepy import VideoFileClip, AudioFileClip
 app = FastAPI()
 
 # Diretório para armazenar os arquivos baixados em cache
-CACHE_DIR = "./cache"
+CACHE_DIR = "/tmp/cache"
 if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
+    os.makedirs(CACHE_DIR, exist_ok=True)
 
 def gerar_nome_cache(url: str, formato: str, resolucao: str = None):
     """
