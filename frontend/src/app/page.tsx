@@ -5,10 +5,11 @@ export default function Home() {
   const [url, setUrl] = useState("");
   const [formato, setFormato] = useState("video");
   const [resolucao, setResolucao] = useState("720p");
+  const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const handleDownload = () => {
     // Monta a URL do endpoint do backend com os parâmetros
-    let apiUrl = `http://localhost:8000/download?url=${encodeURIComponent(
+    let apiUrl = `${NEXT_PUBLIC_API_URL}/download?url=${encodeURIComponent(
       url
     )}&formato=${formato}`;
     if (formato === "video") {
