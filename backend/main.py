@@ -58,7 +58,7 @@ async def download_video(url: str, formato: str, resolucao: str = None):
         )
 
     try:
-        yt = YouTube(url)
+        yt = YouTube(url, client="WEB")
     except Exception as e:
         print(f"[ERROR] Failed to process YouTube URL: {url} | Exception: {e}")
         raise HTTPException(
